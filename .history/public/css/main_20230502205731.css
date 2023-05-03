@@ -1,0 +1,9 @@
+
+  .alert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+  body {
+    background-color: #fFF1; /* reemplaza con el color que desees */
+  }

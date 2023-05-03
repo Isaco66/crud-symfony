@@ -1,0 +1,7 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    error_controller: 'App\\Controller\\ExceptionController::showException'
+
+when@test:
+    twig:
+        strict_variables: true

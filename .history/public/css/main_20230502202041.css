@@ -1,0 +1,8 @@
+.table td {
+    transition: background-color 0.3s ease;
+  }
+  
+  .table td:hover {
+    background-color: #eee;
+  }
+  

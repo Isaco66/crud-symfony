@@ -1,0 +1,13 @@
+.table td {
+    transition: background-color 0.3s ease;
+  }
+  
+  .table td:hover {
+    background-color: #eee;
+  }
+  .alert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+    

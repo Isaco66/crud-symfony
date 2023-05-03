@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container tm-5">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success alert-dismissible fade show" role="alert" data-bs-delay="9000">
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+		<a name="" id="" class="btn btn-primary mb-3" href="{{ path('create') }}" role="button">Agregar</a>
+		<table class="table table-striped table-inverse table-responsive">
+			<thead class="thead-inverse">
+				<tr>
+					<th>#</th>
+					<th>Title</th>
+					<th>Content</th>
+					<th>Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for data in listaDatos %}
+					<tr>
+						<td scope="row">{{data.id}}</td>
+						<td>{{data.title}}</td>
+						<td>{{data.content}}</td>
+						<td>
+							<a name="" id="" class="btn btn-warning" href="{{ path('update', {'id': data.id}) }}" role="button">Update</a>
+							<a name="" id="" class="btn btn-danger" href="{{ path('delete', {'id': data.id}) }}" role="button">Delete</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+{% endblock %}
+

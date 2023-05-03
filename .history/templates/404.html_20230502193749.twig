@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Página no encontrada
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/404.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row justify-content-center align-items-center min-vh-100">
+			<div class="col-md-6 text-center">
+				<h1 class="display-1 fw-bold" id="error-number">{{ 404 }}</h1>
+				<p class="lead mb-4">Lo sentimos {{resource}} la página que buscas no se encuentra.</p>
+				<a href="{{ path('main') }}" class="btn btn-primary">Volver a la página de inicio</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('js/404.js') }}"></script>
+{% endblock %}
+

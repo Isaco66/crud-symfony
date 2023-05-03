@@ -1,0 +1,9 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    
+framework:
+    error_controller: 'App\\Controller\\NotFoundController::showException'
+
+when@test:
+    twig:
+        strict_variables: true

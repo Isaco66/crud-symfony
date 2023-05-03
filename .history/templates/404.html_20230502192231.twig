@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Página no encontrada{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <h1 class="display-1 fw-bold">404</h1>
+        <p class="lead">Lo siento, no se encontró la página que estás buscando.</p>
+        {% if resource is defined %}
+          <p>La URL solicitada era: {{ resource }}</p>
+        {% endif %}
+        <a href="{{ path('main') }}" class="btn btn-primary"><i class="bi bi-house"></i> Volver a inicio</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

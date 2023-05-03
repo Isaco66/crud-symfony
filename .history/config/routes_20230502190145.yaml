@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+errors:
+    path: /error/{code}
+    controller: App\Controller\ErrorController::showError
+    requirements:
+        code: 404

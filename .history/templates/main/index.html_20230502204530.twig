@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Datos{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert" data-bs-delay="5000">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+        <div class="d-flex justify-content-between mb-3">
+            <h1>Lista de Datos</h1>
+            <a href="{{ path('create') }}" class="btn btn-primary">Agregar</a>
+        </div>
+        <table class="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in listaDatos %}
+                    <tr>
+                        <td scope="row">{{ data.id }}</td>
+                        <td>{{ data.title }}</td>
+                        <td>{{ data.content }}</td>
+                        <td>
+                            <a href="{{ path('update', {'id': data.id}) }}" class="btn btn-warning me-2">Editar</a>
+                            <a href="{{ path('delete', {'id': data.id}) }}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
